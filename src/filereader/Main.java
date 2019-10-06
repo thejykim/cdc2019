@@ -9,7 +9,6 @@ public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException {
 
-		/*
 		// Change the file URL to your location
 		File text = new File("C:/Users/jyk/Downloads/police-incident-reports-written.txt");
 		
@@ -44,7 +43,6 @@ public class Main {
 		
 		scan.close();
 		
-		*/
 		
 		// output 2 file
 		
