@@ -1,0 +1,87 @@
+<html>
+	<head>
+		<title>CDC 2019</title>
+		
+		<!-- Bootstrap references -->
+		<link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+		<link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.css">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</head>
+	
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+		  <div class="container">
+		  <a class="navbar-brand" href="#"><strong>CDC</strong> 2019</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+			<span class="navbar-text">
+			  Joseph Kim, Kody Robinson, Luke Duan, Hyunmo Ryang
+			</span>
+		  </div>
+		</nav>
+		
+		<!-- actual body -->
+		</br>
+		<div class="container">
+			<!-- jumbotron -->
+			<div class="jumbotron">
+			<h1 class="display-4">Crime Hotspots</h1>
+			<p class="lead">Mapping recent incident reports in Chapel Hill and using machine learning to generate hotspots</p>
+			</div>
+			
+			<!-- intro card -->
+			<div class="card border-primary mb-3">
+			  <div class="card-body">
+				<div class="card border-info mb-3">
+				  <div class="card-header">Why is this important?</div>
+				  <div class="card-body">
+					<h4 class="card-title">Recognizing Patterns</h4>
+					<p class="card-text">
+					Because crime and incidents are not random events and thus shouldn't be distributed evenly across any given region,
+					we can work backwards by recognizing patterns (or hotspots) based on their locations and frequencies and using them as an insight to
+					a deeper knowledge of why these incidents occur in the first place.
+					</p>
+				  </div>
+				</div>
+				<h3>Scraping Data</h3>
+				<p class="card-text">
+				Utilizing the City of Chapel Hill's incident reports from 2010-2019, we scraped the latitude and longtitude of each report into the following format:
+				</br></br>
+				<img src="img1.png" border="5" height="300px">
+				</p>
+				<h3>K-Means Clustering</h3>
+				<p class="card-text">
+				We chose to apply an unsupervised machine learning algorithm (K-means clustering) on the data. This seemed like the optimal choice, as unsupervised
+				machine learning models are able to formulate trends on their own, without any reference to "correct" outputs. 
+				</br></br>
+				K-means clustering works by first initializing <i>k</i> means uniformly randomly, where <i>k</i> is a positive integer defined by the user. Each data point is then assigned to one
+				of these means, usually by proximity. With each new data point added, the location of these means and grouping of the points may change. The algorithm
+				stops when the locations of the means stop shifting, or when all the data points have been entered.
+				</br></br>
+				In this project, the coordinates from the reformatted data set were plotted onto a 2D plane, and the K-means clustering model grouped the coordinates into
+				<i>k</i> different clusters.
+				</p>
+				<h3>Results</h3>
+				<p class="card-text">
+				<img src="img1.jpg">
+				</br></br>
+				Clusters on a map with Chapel Hill, Durham, and Hillsborough in view. As expected, CHPD reports were centralized in Chapel Hill. K-Means clustering led to a
+				distinction between on-campus incident reports (pictured teal) and off-campus reports (pictured yellow).
+				</br></br>
+				<img src="img2.jpg">
+				</br></br>
+				Points as displayed on UNC-CH campus. Although visualization may be difficult due to the size of the points, the straight line on the top left of the
+				picture is Franklin Street, where it appears the majority of the points are centralized around.
+				</p>
+				<h3>Further Conclusions</h3>
+				<p class="card-text">
+				Hello
+				</p>
+			  </div>
+			</div>
+		</div>
+	</body>
+</html>
